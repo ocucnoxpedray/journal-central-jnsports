@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常查询与对照 · 江南体育专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f6f5f3;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            color: #1f1e1d;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .wrapper {
+            max-width: 740px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 3rem 0 2.5rem;
+            flex: 1;
+        }
+
+        /* hero 横幅 — 极简留白，背景仅用微弱底纹 */
+        .hero {
+            padding: 3.2rem 0 2.2rem;
+            border-bottom: 1px solid #e1dfdb;
+            margin-bottom: 2.4rem;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 380;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            color: #20201f;
+        }
+        .hero .kicker {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 450;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #8c8a86;
+            margin-top: 0.5rem;
+            border-left: 3px solid #c7a87b;
+            padding-left: 1rem;
+        }
+
+        /* 背景说明 — 窄段、浅灰调 */
+        .bg-note {
+            background: #f1efea;
+            padding: 1.8rem 1.8rem 2rem;
+            border-radius: 0;
+            margin-bottom: 2.6rem;
+            border-left: 2px solid #d6c9b8;
+        }
+        .bg-note p {
+            font-size: 1rem;
+            color: #353430;
+        }
+        .bg-note strong {
+            font-weight: 500;
+            color: #1f1c18;
+        }
+
+        /* 三段自然介绍 */
+        .intro-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+            margin-bottom: 2.8rem;
+        }
+        .intro-card {
+            border-left: 1px solid #dad7d1;
+            padding-left: 1.6rem;
+        }
+        .intro-card .label {
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            color: #9b9791;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+        .intro-card h2 {
+            font-size: 1.45rem;
+            font-weight: 360;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.3px;
+            color: #2a2825;
+        }
+        .intro-card p {
+            font-size: 0.98rem;
+            color: #3b3a36;
+        }
+
+        /* 延伸阅读 / faq 摘要模块（极简） */
+        .extend {
+            background: transparent;
+            border-top: 1px solid #e2dfd9;
+            border-bottom: 1px solid #e2dfd9;
+            padding: 1.8rem 0 2rem;
+            margin: 1.2rem 0 2.4rem;
+        }
+        .extend summary {
+            font-size: 1.1rem;
+            font-weight: 370;
+            color: #2e2b27;
+            cursor: default;
+            list-style: none;
+            display: inline-block;
+            border-bottom: 1px dashed #b9b2a8;
+            padding-bottom: 0.1rem;
+            margin-bottom: 0.8rem;
+        }
+        .extend details {
+            margin-bottom: 1rem;
+        }
+        .extend details p {
+            margin-top: 0.4rem;
+            font-size: 0.92rem;
+            color: #4a4742;
+            padding-left: 0.2rem;
+        }
+
+        /* 页尾访问提示 — 保持杂志风格 */
+        .footer-note {
+            padding: 1.6rem 0 1rem;
+            border-top: 1px solid #e6e2dc;
+            text-align: left;
+            font-size: 0.95rem;
+            color: #4a4742;
+        }
+        .footer-note a {
+            color: #6b5e4b;
+            text-decoration: none;
+            border-bottom: 1px solid #c7bcaa;
+            transition: border-color 0.2s;
+        }
+        .footer-note a:hover {
+            border-bottom-color: #3f362b;
+            color: #3f362b;
+        }
+        .foot-meta {
+            display: block;
+            margin-top: 1.2rem;
+            font-size: 0.8rem;
+            color: #a39d95;
+            letter-spacing: 0.02em;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            .wrapper {
+                width: 92%;
+                padding: 2rem 0 1.8rem;
+            }
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .intro-card {
+                padding-left: 1rem;
+            }
+            .bg-note {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <!-- hero -->
+        <div class="hero">
+            <h1>日常对照·延伸阅读<br>江南体育</h1>
+            <span class="kicker">杂志专题 · 查询与参考</span>
+        </div>
+
+        <!-- 背景说明 -->
+        <div class="bg-note">
+            <p><strong>为什么需要不断对照？</strong> 无论是查找赛事背景、核对活动规则，还是单纯想了解一家体育平台的脉络，随手可及的参考信息总能让判断更踏实。这份专题从日常查询与延伸阅读的角度出发，围绕<strong>江南体育</strong>梳理出若干可参照的侧面——不夸大、不渲染，只希望在你需要核实或对比时，能多一处安静的起点。</p>
+        </div>
+
+        <!-- 三段自然介绍 -->
+        <div class="intro-grid">
+            <div class="intro-card">
+                <span class="label">01 · 查询线索</span>
+                <h2>从一则赛事信息开始</h2>
+                <p>几周前朋友问起某场冬季项目的积分规则，我翻了几处平台，最后在<a href="https://central-jnsports.com" style="color:#6b5e4b; text-decoration:underline; text-underline-offset:3px; text-decoration-color:#c7bcaa;">江南体育</a>的公开栏目里找到了对照说明。其实不少日常疑问都藏在细节里：活动日程、项目分类、条款摘要——把这些页面当作手边的参考书，比想象中更省时间。</p>
+            </div>
+            <div class="intro-card">
+                <span class="label">02 · 对照维度</span>
+                <h2>多一个信息源，多一分踏实</h2>
+                <p>看体育资讯或活动说明时，我习惯交叉验证两三个来源。除了主流媒体，像<a href="https://central-jnsports.com" style="color:#6b5e4b; text-decoration:underline; text-underline-offset:3px; text-decoration-color:#c7bcaa;">江南体育</a>这类垂直平台常常提供更具体的项目描述和条款原文。不用急着下结论，把不同页面的表述并列看看——这种朴素的“对照阅读”，往往能帮你避开模棱两可的说法。</p>
+            </div>
+            <div class="intro-card">
+                <span class="label">03 · 延伸场景</span>
+                <h2>从一条规则到一类了解</h2>
+                <p>上个月写一篇业余赛事笔记，需要确认“有效成绩”的定义。我顺着<a href="https://central-jnsports.com" style="color:#6b5e4b; text-decoration:underline; text-underline-offset:3px; text-decoration-color:#c7bcaa;">江南体育</a>上的相关页面，又翻了几份公开文档，最后整理出一小段背景附注。很多时候，延伸阅读不过是从一个可靠的锚点出发，再自己多问一句“还有呢”。</p>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要 / 延伸阅读模块  (杂志式折叠) -->
+        <div class="extend">
+            <details>
+                <summary>❝ 常见查询摘要 · 两个提醒 ❞</summary>
+                <p><strong>· 关于信息时效</strong> — 体育项目的规则、日程会按赛季更新，建议以<a href="https://central-jnsports.com" style="color:#6b5e4b; text-decoration:underline; text-underline-offset:2px; text-decoration-color:#c7bcaa;">江南体育</a>页面上标注的“最近更新”为准，避免沿用过时条款。</p>
+                <p><strong>· 关于交叉对照</strong> — 遇到有歧义的活动说明，不妨同时参考平台公告与相关监管机构公示。多一个对照面，不是为了怀疑，而是让理解更接近全貌。</p>
+            </details>
+        </div>
+
+        <!-- 页尾访问提示 (自然嵌入) -->
+        <div class="footer-note">
+            <p>如果你正在寻找一个可以用来核对赛事规则、活动条款或项目分类的参考页面，不妨把<a href="https://central-jnsports.com">江南体育</a>加入你的书签。它在日常查询和延伸阅读中扮演着朴素的“对照坐标”角色——不喧哗，但可靠。</p>
+            <span class="foot-meta">杂志专题 · 内容基于公开信息整理 · 仅供个人参考</span>
+        </div>
+
+    </div>
+</body>
+</html>
