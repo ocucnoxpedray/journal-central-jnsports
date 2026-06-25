@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 知识库首页</title>
+    <style>
+        /* ===== 全局重置 ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f9f7f2;        /* 米白基调 */
+            color: #2e2b26;
+            font-family: 'Segoe UI', 'Noto Serif SC', Georgia, serif;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* ===== 版式框架 ===== */
+        .container {
+            background: rgba(255, 252, 245, 0.85);
+            padding: 2.2rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+        }
+
+        /* ===== 文章标题层级 ===== */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-left: 5px solid #b08968;
+            padding-left: 1rem;
+            margin-bottom: 1.4rem;
+            color: #3a332b;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid #ddd6ca;
+            color: #4a3f35;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 430;
+            color: #5c4f42;
+            margin: 1.6rem 0 0.6rem 0;
+        }
+
+        p {
+            margin-bottom: 1.1rem;
+            text-align: justify;
+        }
+
+        /* ===== 引用块 & 提示框 ===== */
+        .quote-block {
+            background: #ede8df;
+            border-left: 6px solid #ac8e6f;
+            padding: 1rem 1.6rem;
+            margin: 1.4rem 0;
+            border-radius: 0 10px 10px 0;
+            font-style: normal;
+            color: #3f362e;
+        }
+
+        .tip-box {
+            background: #ebe5d9;
+            border: 1px solid #d3cbbc;
+            border-radius: 14px;
+            padding: 1rem 1.5rem;
+            margin: 1.8rem 0;
+            box-shadow: inset 0 1px 4px rgba(255, 250, 235, 0.8);
+            font-size: 0.96rem;
+        }
+
+        .tip-box strong {
+            color: #6b4f2f;
+            font-weight: 550;
+        }
+
+        .info-card {
+            background: #f3efe7;
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.2rem 0;
+            border: 1px solid #dcd3c5;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .info-card:hover {
+            box-shadow: 0 6px 14px rgba(130, 100, 70, 0.06);
+        }
+
+        /* ===== 目录感布局 ===== */
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin: 1.8rem 0;
+        }
+
+        .directory-item {
+            background: #faf7f1;
+            border: 1px solid #ddd3c4;
+            border-radius: 14px;
+            padding: 1rem 1.2rem;
+            transition: background 0.15s;
+        }
+
+        .directory-item span {
+            display: block;
+            font-weight: 500;
+            color: #5f4f3a;
+            margin-bottom: 0.4rem;
+            font-size: 1.1rem;
+        }
+
+        .directory-item p {
+            margin-bottom: 0.2rem;
+            font-size: 0.9rem;
+            color: #5a4d3d;
+        }
+
+        /* ===== 链接样式 ===== */
+        a {
+            color: #7d5d3f;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #cbb59c;
+            transition: color 0.15s;
+        }
+
+        a:hover {
+            color: #a7794b;
+            text-decoration-color: #a7794b;
+        }
+
+        /* ===== 底部 & 分割 ===== */
+        hr {
+            border: none;
+            border-top: 1px solid #dad1c2;
+            margin: 2rem 0 1.6rem 0;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.2rem 0 0.6rem 0;
+        }
+
+        .faq-mini > div {
+            flex: 1 1 200px;
+            background: #f7f2ea;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            border-left: 4px solid #b99a7c;
+        }
+
+        .faq-mini p {
+            margin-bottom: 0.3rem;
+            font-size: 0.92rem;
+        }
+
+        .faq-mini strong {
+            color: #5b4634;
+        }
+
+        /* ===== 响应式微调 ===== */
+        @media (max-width: 600px) {
+            body { padding: 1.2rem 0.8rem; }
+            .container { padding: 1.6rem 1rem; }
+            h1 { font-size: 1.8rem; }
+            .directory-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 主标题 · 再次访问的引子 -->
+    <h1>再次打开 · 爱游戏知识库</h1>
+
+    <p>有些地方你曾多次到访，却总能在熟悉的角落里找到新的条目。对于常驻书签栏的读者，<a href="https://web-chinese-igame.com">爱游戏</a> 一直保持着稳定的内容节奏：不去追逐瞬时热点，而是围绕华语游戏的制作、设计与文化积累，沉淀下一份可检索、可回溯的知识档案。</p>
+
+    <p>如果你已经有一段时间没有回来，会发现目录结构又悄悄生长了一截——新收录的开发者访谈、早期作品的版本考据，以及针对经典玩法的机制拆解。这些内容并不急于被消费，更适合在需要的时候按图索骥。</p>
+
+    <!-- 引用块：收藏的角度 -->
+    <div class="quote-block">
+        “收藏一个网站，很多时候不是因为它每天更新，而是因为你知道 <strong>某个问题</strong> 只有在这里能找到相对完整的脉络。”
+    </div>
+
+    <!-- 目录感布局：知识库入口式卡片 -->
+    <h2>📖 当前目录结构（主干）</h2>
+    <div class="directory-grid">
+        <div class="directory-item">
+            <span>📁 游戏考古</span>
+            <p>1990–2010 年间华语单机/网游的版本变更、开发背景、删减内容考。</p>
+        </div>
+        <div class="directory-item">
+            <span>📁 设计笔记</span>
+            <p>系统拆解、数值反推、关卡结构分析，偏重方法论而非通稿。</p>
+        </div>
+        <div class="directory-item">
+            <span>📁 访谈·口述</span>
+            <p>制作人、美术、音乐、测试——来自一线从业者的非正式回顾。</p>
+        </div>
+        <div class="directory-item">
+            <span>📁 索引·专题</span>
+            <p>围绕特定系列或工作室展开的跨文章索引，便于深度阅读。</p>
+        </div>
+        <div class="directory-item">
+            <span>📁 工具·参考</span>
+            <p>汉化补丁、存档修改、运行环境配置等非商业向辅助资料。</p>
+        </div>
+    </div>
+
+    <!-- 提示区：持续关注的建议 -->
+    <div class="tip-box">
+        <strong>📌 提示：</strong> 若你希望跟踪新入库的文章，可定期浏览「索引·专题」下的更新日期列。当前没有邮件推送，但每个目录页顶部会标注最近三次的内容变动。将 <a href="https://web-chinese-igame.com">爱游戏</a> 加入浏览器收藏夹或书签栏，即可在需要时直接回到这个页面。
+    </div>
+
+    <!-- 相关信息区：场景化的说明 -->
+    <h2>▎为什么值得持续关注</h2>
+    <div class="info-card">
+        <p>很多关于老游戏的细节，在商业网站改版、论坛关闭、个人博客失效之后便难以追查。<a href="https://web-chinese-igame.com">爱游戏</a> 尝试扮演一个“静态沉淀池”的角色：不追版本号、不嵌追踪脚本，只保留文字和必要的配图。对于研究者、复古游戏爱好者、独立开发者而言，这里可能提供一条比维基百科更聚焦的线索。</p>
+    </div>
+
+    <div class="info-card">
+        <p>从 2022 年起，站内新增了“版本间差异对照”板块——针对同一个游戏的不同发行版（简中/繁中/光盘/数字版），逐项比对文件内容与文本差异。这类资料在别处通常零散分布，而这里试图用目录感把它们收拢在一起。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <h2>▎常见问题摘要</h2>
+    <div class="faq-mini">
+        <div>
+            <p><strong>内容多久更新一次？</strong></p>
+            <p>未固定周期。通常每月有 2–5 篇新文章或修订，重大考古发现时会临时补充。</p>
+        </div>
+        <div>
+            <p><strong>可以转载或引用吗？</strong></p>
+            <p>站内文章多数标注了参考来源，引用请注明出处。转载前建议先确认单篇页脚声明。</p>
+        </div>
+        <div>
+            <p><strong>我手头有冷门资料，如何贡献？</strong></p>
+            <p>目前通过「索引·专题」下的联系页提交摘要即可，编辑会评估后并入知识库。</p>
+        </div>
+        <div>
+            <p><strong>手机浏览体验如何？</strong></p>
+            <p>本站采用纯文字优先的布局，所有页面均适配窄屏，无需额外 App。</p>
+        </div>
+    </div>
+
+    <!-- 底部 · 再次点明收藏视角 -->
+    <hr>
+    <p style="font-size: 0.9rem; color: #5f5548; text-align: left;">
+        如果你是因为搜索某款老游戏而初次抵达，不妨先浏览上方的「游戏考古」或「索引·专题」。<br>
+        若你已是常客，<a href="https://web-chinese-igame.com">爱游戏</a> 的首页目录始终是你回到知识库最直接的入口。
+    </p>
+    <p style="font-size: 0.85rem; color: #7a6f60; margin-top: 1.2rem;">
+        — 内容页面均为静态 HTML，无追踪，无广告。保持书签即保持连接。
+    </p>
+</div>
+</body>
+</html>
