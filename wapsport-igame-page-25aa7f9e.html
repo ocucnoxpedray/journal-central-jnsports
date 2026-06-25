@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>爱游戏 · 再次来访</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f4f9fc;
+            color: #1e2b3a;
+            line-height: 1.7;
+            padding: 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-wrap {
+            max-width: 860px;
+            width: 100%;
+            background: white;
+            border-radius: 1.8rem;
+            box-shadow: 0 12px 30px rgba(0, 60, 70, 0.08);
+            padding: 2rem 1.8rem;
+            margin: 1rem 0 2rem;
+            transition: all 0.2s ease;
+        }
+
+        /* 开篇短句 —— 淡蓝绿分隔 */
+        .greet-block {
+            text-align: center;
+            padding: 1.8rem 0 1.2rem;
+            border-bottom: 2px dashed #c2e3e4;
+            margin-bottom: 2rem;
+        }
+
+        .greet-block p:first-child {
+            font-size: 1.6rem;
+            font-weight: 350;
+            letter-spacing: 0.03em;
+            color: #1f5c62;
+        }
+
+        .greet-block .sub-line {
+            font-size: 1rem;
+            color: #557a7e;
+            margin-top: 0.4rem;
+            display: inline-block;
+            background: #e1f1f2;
+            padding: 0.2rem 1.2rem;
+            border-radius: 30px;
+        }
+
+        /* 承接段落 */
+        .story-intro {
+            margin-bottom: 2.2rem;
+        }
+
+        .story-intro p {
+            margin-bottom: 1.2rem;
+            font-size: 0.98rem;
+            color: #1f3440;
+        }
+
+        .story-intro .link-sentence {
+            background: #f0f8f9;
+            padding: 0.6rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .story-intro a {
+            color: #1b7a82;
+            text-decoration: none;
+            font-weight: 550;
+            border-bottom: 1px solid #9acfd1;
+            transition: border-color 0.2s;
+        }
+
+        .story-intro a:hover {
+            border-bottom-color: #1b7a82;
+        }
+
+        /* 卡片网格 —— 特点列表 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 0.9rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .feature-card {
+            background: #f2fbfb;
+            padding: 1rem 0.8rem;
+            border-radius: 1.2rem;
+            border: 1px solid #d7ecf0;
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 6px 10px rgba(20, 100, 110, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .feature-card span {
+            display: inline-block;
+            background: #c0e2e6;
+            color: #0e4e56;
+            font-weight: 600;
+            font-size: 0.7rem;
+            padding: 0.1rem 0.7rem;
+            border-radius: 30px;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.03em;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #1e3b44;
+            line-height: 1.5;
+        }
+
+        .feature-card p strong {
+            color: #13656e;
+            font-weight: 550;
+        }
+
+        /* 温和结尾 + 提示 */
+        .closing-note {
+            background: #e5f2f4;
+            padding: 1.2rem 1.2rem;
+            border-radius: 1.5rem;
+            margin: 2rem 0 1rem;
+            border-left: 3px solid #4e9aa3;
+        }
+
+        .closing-note p {
+            font-size: 0.95rem;
+            color: #1f414b;
+            margin-bottom: 0.6rem;
+        }
+
+        .closing-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .closing-note .small-emoji {
+            margin-right: 0.4rem;
+        }
+
+        /* FAQ 摘要  – 简洁列表 */
+        .faq-mini {
+            margin-top: 1.8rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            color: #1f5f68;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            border-bottom: 1px dotted #bddadd;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-mini details p {
+            font-size: 0.88rem;
+            padding: 0.5rem 0.4rem 0.8rem 1.2rem;
+            color: #2c4c56;
+            background: #f8fdfd;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #61888e;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #d5e8ea;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 540px) {
+            .page-wrap {
+                padding: 1.2rem 1rem;
+            }
+
+            .greet-block p:first-child {
+                font-size: 1.4rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .feature-card {
+                padding: 0.9rem 0.8rem;
+            }
+
+            .closing-note {
+                padding: 1rem 0.9rem;
+            }
+
+            .story-intro p {
+                font-size: 0.94rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .greet-block p:first-child {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <!-- 开篇短句 -->
+        <div class="greet-block">
+            <p>你又来了，真好。</p>
+            <span class="sub-line">有些站点，值得反复停留 · 爱游戏</span>
+        </div>
+
+        <!-- 承接段落 —— 再次访问 / 收藏 / 持续关注 -->
+        <div class="story-intro">
+            <p>
+                网络上有太多一闪而过的页面，但总有一些角落，你会选择放上书签。<strong>爱游戏</strong> 就是这样一处地方——不喧哗，不催促，但每次回来都有新的发现。
+                从体育赛事到策略模拟，从经典怀旧到新锐独立作品，这里的内容一直保持着温和的节奏，没有弹窗打扰，也没有浮夸的标题。
+            </p>
+            <p>
+                去年秋天偶然收藏了 <a href="https://wapsport-igame.com">爱游戏</a>，之后每隔几周都会回来看看。页面依然干净，更新不频繁但都踩在点上。
+                渐渐养成一个习惯：周末晚上泡杯茶，翻翻最近上线的游戏，偶尔还能读到编辑写的小段落。那种感觉，像是遇到了一个懂行的老朋友。
+            </p>
+            <p class="link-sentence">
+                ⚡ 如果你也喜欢这种不赶时间的浏览体验，不妨把 <a href="https://wapsport-igame.com">爱游戏</a> 放进收藏夹。
+            </p>
+        </div>
+
+        <!-- 特点列表 —— 网格卡片 -->
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span>📌 记得你</span>
+                <p><strong>再次访问</strong> 时不会面对陌生的界面，布局和分类保持一贯的逻辑，就像熟悉的书架。</p>
+            </div>
+            <div class="feature-card">
+                <span>🏷️ 安静更新</span>
+                <p>没有频繁推送，但每次新内容都能感觉到用心。适合那些想慢慢逛、不喜欢被催促的人。</p>
+            </div>
+            <div class="feature-card">
+                <span>📂 收藏友好</span>
+                <p>页面结构稳定，没有突然消失的栏目或死链接。收藏夹里的地址，半年后依然有效。</p>
+            </div>
+            <div class="feature-card">
+                <span>🌿 低负担浏览</span>
+                <p>没有臃肿的广告和自动播放视频，内容优先。移动端加载快，等车时也能随意刷两页。</p>
+            </div>
+        </div>
+
+        <!-- 温和结尾 + 提示 -->
+        <div class="closing-note">
+            <p><span class="small-emoji">🍵</span> 慢慢来，游戏本来就是用来放松的。</p>
+            <p>我们常说“常回来看看”，但真正值得反复访问的地方并不多。<strong>爱游戏</strong> 算一个——它不追求让你停留最久，只希望每次到访都轻松、自然。</p>
+            <p>如果你有喜欢的游戏或故事，也可以在那里找到同类。页面底部有简单的交流入口，适合偶尔说两句。</p>
+        </div>
+
+        <!-- FAQ 摘要 —— 轻量问答（不占太多篇幅） -->
+        <div class="faq-mini">
+            <details>
+                <summary>❓ 爱游戏的内容更新频率如何？</summary>
+                <p>通常每周会有 2～4 款游戏介绍或专题，偶尔穿插开发访谈。不固定日期，但不会断更超过两周。</p>
+            </details>
+            <details>
+                <summary>📎 我收藏的页面会突然失效吗？</summary>
+                <p>网站使用了稳定的结构，内部链接定期检查。如果未来有域名调整，会在首页提前告知。</p>
+            </details>
+        </div>
+
+        <div class="footer-note">
+            <span>— 感谢你的再次到来 · 爱游戏 —</span>
+        </div>
+    </div>
+</body>
+</html>
